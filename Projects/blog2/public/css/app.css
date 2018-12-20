@@ -1,0 +1,12 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito);.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+#footer {
+  margin-top: 30px;
+  padding: 20px;
+  color: #fff;
+  background: #333 !important;
+}
+
