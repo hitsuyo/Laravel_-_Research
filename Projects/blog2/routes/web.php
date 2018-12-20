@@ -16,9 +16,9 @@
 // });
 
 
-Route::get('blog/laravel-admin', 'HomeController@myAdmin');
+Route::get('blog2/laravel-admin', 'HomeController@myAdmin');
 
-Route::get('blog/laravel-users', 'HomeController@myUsers');
+Route::get('blog2/laravel-users', 'HomeController@myUsers');
 
 // Route::post('blog/contact/submit', 'MessageController@submit');
 

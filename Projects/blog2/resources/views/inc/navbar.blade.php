@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-expand-md">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -11,9 +11,9 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/blog">Home</a></li>
-            <li><a href="/blog/about">About</a></li>
-            <li><a href="/blog/contact">Contact</a></li>
+            <li class="active"><a href="/blog2">Home</a></li>
+            <li><a href="/blog2/about">About</a></li>
+            <li><a href="/blog2/contact">Contact</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

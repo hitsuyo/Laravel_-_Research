@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Blog</title>
-    <link rel="stylesheet" href="public/css/app.css">
+    <link rel="stylesheet" href="public/css/app.css"> <!-- app.css is compiled from app.scss -->
     <link rel="stylesheet" href="public/css/custom_add/bootstrap.min.css">
 </head>
 <body>
@@ -22,18 +22,19 @@
         </div>
     </div>
     
+    <!-- test Vue js -->
+    @include('inc.test_part')
 
-    <div id="app">
-        <example-component></example-component>
-    </div>
 
-    <footer id="footer" class="text-center">
-        <p>Copyright 2018 &copy; Blog</p>
-    </footer>
+    @include('inc.footer')
 
-    <!-- Call Vue js -->
+    <!-- Call Vue js, this type is calling from public folder -->
     <!-- <script src="{{ mix('js/app.js') }}"></script> -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('public/js/app.js') }}"></script>  <!-- Vue.js -->
     <!-- <script src="js/app.js"></script> -->
+    <script src="{{ asset('public/js/custom_js_add/bootstrap.min.js') }}"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+
 </body>
 </html>
