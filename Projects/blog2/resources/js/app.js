@@ -35,13 +35,4 @@ const app = new Vue({
 
 Vue.component('hello', require('./components/Hello.vue'));  // THis is global component
 
-const Sidebar = {
-  template: '<aside>Sidebar</aside>'
-}
 
-	new Vue({
-	  el: '#app',
-	  components: {
-	    Sidebar
-	  }
-	})

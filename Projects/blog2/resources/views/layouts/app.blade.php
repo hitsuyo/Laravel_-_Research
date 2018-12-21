@@ -7,6 +7,9 @@
     <title>Blog</title>
     <link rel="stylesheet" href="public/css/app.css"> <!-- app.css is compiled from app.scss -->
     <link rel="stylesheet" href="public/css/custom_add/bootstrap.min.css">
+    <style>
+        .invalid-feedback {display: block;}
+    </style>
 </head>
 <body>
     @include('inc.navbar')

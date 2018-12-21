@@ -37,13 +37,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 // ------------
 
 // Route::get('/contact', function () {
-//     return view('/email/contact');
+//     return view('/emails/contact');
 // });
 
-Route::get('/contact', function () {
-    'uses' => 'ContactUsController@contactUsPage'
-});
-Route::get('/send', [
+Route::get('/contact', 'ContactUsController@contactUsPage');
+
+// Route::get('/contact', function () {
+//     'uses' => 'ContactUsController@contactUsPage'
+// });
+Route::post('/send', [
 	'uses' => 'ContactUsController@send',
 	'as' => 'contact.send'
 ]);
