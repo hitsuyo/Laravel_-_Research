@@ -29,9 +29,21 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about');
 });
-Route::get('/contact', function () {
-    return view('contact');
-});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// ------------
+
+// Route::get('/contact', function () {
+//     return view('/email/contact');
+// });
+
+Route::get('/contact', function () {
+    'uses' => 'ContactUsController@contactUsPage'
+});
+Route::get('/send', [
+	'uses' => 'ContactUsController@send',
+	'as' => 'contact.send'
+]);

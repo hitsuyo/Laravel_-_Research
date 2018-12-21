@@ -1,5 +1,5 @@
 <nav class="navbar navbar-inverse navbar-expand-md">
-      <div class="container">
+    <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -16,5 +16,5 @@
             <li><a href="/blog2/contact">Contact</a></li>
           </ul>
         </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+    </div>
+</nav>

@@ -34,7 +34,7 @@
     <!-- <script src="js/app.js"></script> -->
     <script src="{{ asset('public/js/custom_js_add/bootstrap.min.js') }}"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script> -->
 
 </body>
 </html>

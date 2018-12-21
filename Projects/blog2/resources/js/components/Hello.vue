@@ -17,6 +17,11 @@ const Sidebar = {
 	  template: '<p>Hi {{ name }}</p>'
 	})
 
+	Vue.component('nihon-go', {
+	  props: ['ji'],
+	  template: '<p>Hi {{ ji }}</p>'
+	})
+
 	new Vue({
 	  el: '#app'
 	})
