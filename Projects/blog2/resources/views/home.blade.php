@@ -1,9 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.blank')
 
 @section('content')
     <h1>Home</h1>
 @endsection
-
 
 
 @section('sidebar')

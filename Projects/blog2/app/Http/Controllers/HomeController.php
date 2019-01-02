@@ -25,4 +25,18 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function myAdmin()
+    {
+        return view('myAdmin');
+    }
+    /**
+     * Show the my users page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function myUsers()
+    {
+        return view('myUsers');
+    }
 }

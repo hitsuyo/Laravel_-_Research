@@ -15,13 +15,39 @@
 //     return view('welcome');
 // });
 
+Route::get('/dashboard', 'DashboardController@index');
 
-Route::get('blog2/laravel-admin', 'HomeController@myAdmin');
+Route::get('/blog2/laravel-admin', 'HomeController@myAdmin');
 
-Route::get('blog2/laravel-users', 'HomeController@myUsers');
+Route::get('/blog2/laravel-users', 'HomeController@myUsers');
 
 // Route::post('blog/contact/submit', 'MessageController@submit');
 
+Route::resource('student','StudentController');
+
+Route::get('/student', 'StudentController@index');
+// Route::get('/student/index', 'StudentController@index');
+
+// Route::get('/create', 'StudentController@create');
+
+Route::get('/student/create', 'StudentController@create');
+
+// Route::get('/edit', 'StudentController@edit');
+
+// Route::get('/student/', function () {
+//     return view('/student/index');
+// });
+
+// ---------------------------------
+
+Route::resource('blog','PostsController');
+
+Route::get('/blog_crud', 'PostsController@crud');
+
+Route::get('/blog', 'PostsController@index');
+
+Route::get('/blog/create', 'PostsController@create');
+// ---------------------------------
 
 Route::get('/', function () {
     return view('home');
@@ -32,7 +58,7 @@ Route::get('/about', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
 // ------------
 

@@ -19,6 +19,10 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
+Vue.component('fullstack', require('./components/Fullstack.vue'));
+
+Vue.component('test', require('./components/TestComponent.vue'));
+
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
 
@@ -28,11 +32,20 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+
 const app = new Vue({
     el: '#app'
 });
 
 
 Vue.component('hello', require('./components/Hello.vue'));  // THis is global component
+
+// ------------ 
+
+
+
+
+
+
 
 

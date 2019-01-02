@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Blog 2</title>
-    <link rel="stylesheet" href="{{asset('public/css/app.css')}}"> <!-- app.css is compiled from app.scss -->
-    <link rel="stylesheet" href="{{asset('public/css/custom_add/bootstrap.min.css')}}">
+    <title>Blog</title>
+    <link rel="stylesheet" href="public/css/app.css"> <!-- app.css is compiled from app.scss -->
+    <link rel="stylesheet" href="public/css/custom_add/bootstrap.min.css">
     <style>
         .invalid-feedback {display: block;}
     </style>
@@ -25,8 +25,8 @@
         </div>
     </div>
     
-
-
+	<!-- test Vue js -->
+	@include('inc.test_part')
 
     @include('inc.footer')
 

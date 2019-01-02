@@ -14,6 +14,33 @@
             <li class="active"><a href="/blog2">Home</a></li>
             <li><a href="/blog2/about">About</a></li>
             <li><a href="/blog2/contact">Contact</a></li>
+            <li><a href="/blog2/student">Student</a></li>
+            <li><a href="/blog2/blog">Blog</a></li>
+          </ul>
+
+          <!-- Right Side Of Navbar -->
+          <ul class="nav navbar-nav navbar-right">
+                @if(Auth::guest())
+                  <li><a href="{{ route('login') }}">Login</a></li>
+                  <li><a href="{{ route('register') }}">Register</a></li>
+                @else
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        {{ Auth::user()->name }} <span class="caret"></span>
+                    </a>
+
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="/dashboard">Dashboard</a></li>
+                        <li>
+                          <a href="{{ route('logout') }}" onclick="event.preventDefault(); documnent.getElementById('logout-form').submit();">Logout</a>
+                          
+                          <form id=logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                          </form>
+                        </li>
+                    </ul>
+                </li>
+                @endif
           </ul>
         </div><!--/.nav-collapse -->
     </div>

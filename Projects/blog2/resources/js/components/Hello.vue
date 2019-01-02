@@ -17,9 +17,29 @@ const Sidebar = {
 	  template: '<p>Hi {{ name }}</p>'
 	})
 
+	Vue.component('TodoItem', {
+		props: ['ji']
+	})
+
 	Vue.component('nihon-go', {
-	  props: ['ji'],
-	  template: '<p>Hi {{ ji }}</p>'
+  		props: {
+			todo: {
+				type: String,
+				default: "Yes",
+				required: true
+			},
+			ji: {
+				type: String,
+				default: "ABC",
+			}
+		},
+	  	template: `
+			<div>
+	        	Footer Stuff
+	        	<p>Hi {{ todo }}</p>
+	        	<p>This is {{ ji }}</p>
+	      	</div>
+		`
 	})
 
 	new Vue({

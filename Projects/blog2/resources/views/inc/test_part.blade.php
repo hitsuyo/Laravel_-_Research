@@ -7,9 +7,15 @@
 		</div>
 
 		<div class="container">
-			<nihon-go ji="ひらがな - hiragana"></nihon-go>
-			<nihon-go ji="カタカナ - katakana"></nihon-go>
-			<nihon-go ji="漢字 - kanji"></nihon-go>
+			<nihon-go todo="ひらがな - hiragana" ji="A"></nihon-go>
+			<nihon-go todo="カタカナ - katakana" ji="A"></nihon-go>
+			<nihon-go todo="漢字 - kanji" ji="A"></nihon-go>
+		</div>
+
+		<div class="container">
+			@section('content')
+				<fullstack></fullstack>
+			@endsection
 		</div>
 	</div>
 <!-- end Use for Vue js -->
