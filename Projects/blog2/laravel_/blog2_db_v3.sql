@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 28, 2018 lúc 10:31 AM
+-- Thời gian đã tạo: Th1 07, 2019 lúc 08:32 AM
 -- Phiên bản máy phục vụ: 10.1.34-MariaDB
 -- Phiên bản PHP: 7.2.7
 
@@ -40,7 +40,8 @@ CREATE TABLE `migrations` (
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (2, '2018_12_26_080249_create_students_table', 1),
-(5, '2018_12_27_092217_create_posts_table', 2);
+(5, '2018_12_27_092217_create_posts_table', 2),
+(6, '2019_01_07_042805_add_user_id_to_posts', 3);
 
 -- --------------------------------------------------------
 
@@ -53,17 +54,18 @@ CREATE TABLE `posts` (
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `content` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `posts`
 --
 
-INSERT INTO `posts` (`id`, `title`, `content`, `created_at`, `updated_at`) VALUES
-(1, 'Laravel', 'Laravel is good framework', '2018-12-27 19:01:32', '2018-12-27 19:01:32'),
-(3, 'CRUD', 'Create Read Update Delete', '2018-12-27 20:32:00', '2018-12-27 20:32:00'),
-(4, 'Textarea', 'Textarea for type content', '2018-12-27 23:43:06', '2018-12-27 23:43:06');
+INSERT INTO `posts` (`id`, `title`, `content`, `created_at`, `updated_at`, `user_id`) VALUES
+(1, 'Laravel', 'Laravel is good framework', '2018-12-27 19:01:32', '2018-12-27 19:01:32', 1),
+(3, 'CRUD', 'Create Read Update Delete', '2018-12-27 20:32:00', '2018-12-27 20:32:00', 1),
+(4, 'Textarea', 'Textarea for type content', '2018-12-27 23:43:06', '2018-12-27 23:43:06', 1);
 
 -- --------------------------------------------------------
 
@@ -116,7 +118,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, '', 's@yahoo.com', NULL, 's', NULL, NULL, NULL),
-(2, 'sony', 'sony@yahoo.com', NULL, '$2y$10$.BlPK9ls1PM.kbgJ2gawu.d9sHop30mC8nFAdRS94T.z2o8CZL86.', NULL, '2018-12-28 02:16:49', '2018-12-28 02:16:49');
+(2, 'sony', 'sony@yahoo.com', NULL, '$2y$10$.BlPK9ls1PM.kbgJ2gawu.d9sHop30mC8nFAdRS94T.z2o8CZL86.', '6qnRGOxZ6BZVpJfDRBTY3hqu1bny39UsByURDRVIB7fbt7yWDbtMlGyQZj86', '2018-12-28 02:16:49', '2018-12-28 02:16:49');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -154,7 +156,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `posts`

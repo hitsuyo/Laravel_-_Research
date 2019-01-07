@@ -12,8 +12,10 @@
     </style>
 </head>
 <body>
-    @include('inc.navbar')
-
+    <div id="app">
+        @include('inc.navbar')
+    </div>
+    
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-lg-8">

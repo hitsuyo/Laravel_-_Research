@@ -9,5 +9,9 @@
 	<small>Written on {{$post->created_at}}</small>
 	<hr>
 
-	<a href="{{action('PostsController@edit',$post['id'])}}" class="btn btn-warning">Edit</a>
+	@if(!Auth::guest())
+		@if(Auth::user()->id == $post->user_id)
+			<a href="{{action('PostsController@edit',$post['id'])}}" class="btn btn-warning">Edit</a>
+		@endif
+	@endif
 @endsection

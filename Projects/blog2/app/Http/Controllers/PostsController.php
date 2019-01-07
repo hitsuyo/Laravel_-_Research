@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class PostsController extends Controller
 {
     /**
+    * Create a new controller instance
+    * 
+    * @return void
+    */
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index','show']]);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -26,7 +36,7 @@ class PostsController extends Controller
          $posts = Post::all()->toArray();
          // $posts = Post::orderBy('title','desc')->get();
          // $posts = Post::orderByDesc('title','asc')->paginate(1);
-        $posts = Post::orderByDesc('created_at','asc')->get();
+        // $posts = Post::orderByDesc('created_at','asc')->get();
         return view('blog.index')->with('posts', $posts);
         // return view('blog.index', compact('posts'));
         // return view('/blog/index');
@@ -60,11 +70,13 @@ class PostsController extends Controller
             'post_title' => 'required',
             'post_content' => 'required'
         ], $messages);
-        $post = new Post([
-            'title' => $request->get('post_title'),
-            'content' => $request->get('post_content'),
-            'user_id' => auth()->user()->id
-        ]);
+
+        // Create Post
+        $post = new Post;
+        $post->title = $request->input('post_title');
+        $post->content = $request->input('post_content');
+        $post->user_id = auth()->user()->id;
+
         $post->save();
         return redirect('/blog/create')->with('success','Post Added');
     }
@@ -91,6 +103,10 @@ class PostsController extends Controller
     {
         $post = Post::find($id);
 
+        //Check for correct user
+        if(auth()->user()->id !== $post->user_id){
+            return redirect('/')->with('error', 'Unauthorized Page');
+        }
         return view('/blog/edit', compact('post','id'));
     }
 

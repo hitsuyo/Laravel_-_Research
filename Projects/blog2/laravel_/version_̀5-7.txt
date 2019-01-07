@@ -1,0 +1,7 @@
+/* Created at 07/01/2018 
+* App name: blog2
+*/
+
+User Authentication compleated. Tutorials : https://www.youtube.com/watch?v=quiUytHXutM
+
+Login/ Logout/ Register

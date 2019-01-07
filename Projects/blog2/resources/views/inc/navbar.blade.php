@@ -11,11 +11,11 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/blog2">Home</a></li>
-            <li><a href="/blog2/about">About</a></li>
-            <li><a href="/blog2/contact">Contact</a></li>
-            <li><a href="/blog2/student">Student</a></li>
-            <li><a href="/blog2/blog">Blog</a></li>
+              <li class="active"><a href="/blog2">Home</a></li>
+              <li><a href="/blog2/about">About</a></li>
+              <li><a href="/blog2/contact">Contact</a></li>
+              <li><a href="/blog2/student">Student</a></li>
+              <li><a href="/blog2/blog">Blog</a></li>
           </ul>
 
           <!-- Right Side Of Navbar -->
@@ -30,11 +30,11 @@
                     </a>
 
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="/dashboard">Dashboard</a></li>
+                        <li><a href="/blog2/dashboard">Dashboard</a></li>
                         <li>
-                          <a href="{{ route('logout') }}" onclick="event.preventDefault(); documnent.getElementById('logout-form').submit();">Logout</a>
+                          <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                           
-                          <form id=logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             {{ csrf_field() }}
                           </form>
                         </li>
