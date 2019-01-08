@@ -22,6 +22,7 @@ class ContactUsController extends Controller
    }
 
    public function send(Request $request)
+   // public function store(Request $request)
    {
    		
     	//Phải khai báo lại theo tên từ hệ thống 

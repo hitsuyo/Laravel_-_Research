@@ -1,3 +1,4 @@
+<!-- This layout use for all page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,18 +16,25 @@
     @include('inc.navbar')
 
     <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-lg-8">
-                @yield('content')
+        <div class="col-md-8 col-lg-8">
+            <div class="container">
+                <!-- <div class="row"> -->
+                    <div class="col-md-8 col-lg-8">
+                        @yield('content')
+
+                        @include('inc.test_part')
+                    </div>
+                <!-- </div> -->
+
             </div>
-            <div class="col-md-4 col-lg-4">
-                @include('inc.sidebar')
-            </div>
+        </div>
+        <div class="col-md-4 col-lg-4">
+            @include('inc.sidebar')
         </div>
     </div>
     
 	<!-- test Vue js -->
-	@include('inc.test_part')
+	
 
     @include('inc.footer')
 

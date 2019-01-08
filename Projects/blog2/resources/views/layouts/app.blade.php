@@ -1,3 +1,4 @@
+<!-- This layout just use for homepage -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +20,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-lg-8">
-                @yield('content')
+                 @yield('content')
             </div>
             <div class="col-md-4 col-lg-4">
                 @include('inc.sidebar')

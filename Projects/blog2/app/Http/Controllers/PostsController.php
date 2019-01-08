@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
+// use DB;
 
 class PostsController extends Controller
 {
@@ -33,13 +34,16 @@ class PostsController extends Controller
 
     public function index()
     {
-         $posts = Post::all()->toArray();
-         // $posts = Post::orderBy('title','desc')->get();
-         // $posts = Post::orderByDesc('title','asc')->paginate(1);
-        // $posts = Post::orderByDesc('created_at','asc')->get();
-        return view('blog.index')->with('posts', $posts);
+         // $posts = Post::all()->toArray();
+         // $posts = DB::select('SELECT * FROM posts');
+         // $posts = Post::orderByDesc('title','desc')->paginate(1);
+        // $posts = Post::orderByDesc('created_at','asc');
+        
         // return view('blog.index', compact('posts'));
         // return view('/blog/index');
+
+        $posts = Post::orderBy('title','asc')->get();
+        return view('blog.index')->with('posts', $posts);
     }
 
     /**
@@ -137,7 +141,7 @@ class PostsController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy(Post $post, $id)
     {
         $post = Post::find($id);
         $post->delete();

@@ -4,9 +4,12 @@
 	<div class="row">
 		<h1 class="col-12 col-sm-6">Blog</h1>
 		<!-- <a href="http://localhost/blog2/blog_crud">Manage posts</a> -->
-		@if(!Auth::guest())
+<!-- 		@if(!Auth::guest())
 			<a href="/blog2/blog_crud" class="btn btn-info btn-sm col-12 col-sm-6" role="button">Manage posts</a>
-		@endif
+		@endif -->
+		@unless (Auth::guest())
+			<a href="/blog2/blog_crud" class="btn btn-info btn-sm col-12 col-sm-6" role="button">Manage posts</a>
+		@endunless
 	</div>
 	@foreach($posts as $row)
 	<div class="well">			
