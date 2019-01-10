@@ -107,11 +107,18 @@ class PostsController extends Controller
     {
         $post = Post::find($id);
 
-        //Check for correct user
+        //Check for correct user, phân quyền, chỉ định user_id có quyền với id của post nào
         if(auth()->user()->id !== $post->user_id){
-            return redirect('/')->with('error', 'Unauthorized Page');
+            return response([
+                'status' => false,
+                'message' => 'You don\'t have permission to edit this post!' 
+            ], 200);
+            // return redirect('/blog_crud')->with('error', 'Unauthorized Page');
+            
+        }else {
+            return view('/blog/edit', compact('post','id'));
         }
-        return view('/blog/edit', compact('post','id'));
+        // return redirect('/blog_crud')->with('error', 'Unauthorized Page');
     }
 
     /**
@@ -123,16 +130,21 @@ class PostsController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        $this->validate($request, [
-            'title' => 'required', //'title' will be show in error box
-            'content' => 'required'
-        ]);
-        $post = Student::find($id);
-        $post->title = $request->get('post_title');
-        $post->content = $request->get('post_content');
+        if(auth()->user()->id !== $post->user_id){
+            $this->validate($request, [
+                'title' => 'required', //'title' will be show in error box
+                'content' => 'required'
+            ]);
+            $post = Student::find($id);
+            $post->title = $request->get('post_title');
+            $post->content = $request->get('post_content');
+            
+            $post->save();
+        }
+        else{
+            return redirect('/blog')->with('success','Post Updated');
+        }
         
-        $post->save();
-        return redirect('/blog')->with('success','Post Updated');
     }
 
     /**
@@ -143,8 +155,12 @@ class PostsController extends Controller
      */
     public function destroy(Post $post, $id)
     {
-        $post = Post::find($id);
-        $post->delete();
-        return redirect('/blog')->with('success', 'Post "'.$post->title.' Disappeared !');
+        if(auth()->user()->id !== $post->user_id){
+            $post = Post::find($id);
+            $post->delete();
+        }
+        else{
+            return redirect('/blog')->with('success', 'Post "'.$post->title.' Disappeared !');
+        }
     }
 }

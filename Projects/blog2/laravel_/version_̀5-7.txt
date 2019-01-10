@@ -7,3 +7,5 @@ User Authentication compleated. Tutorials : https://www.youtube.com/watch?v=quiU
 Working with Eloquent which is an ORM (Object Relational Mapper)
 
 Login/ Logout/ Register
+
+Chuc nang phan quyen (post duoc chi dinh danh cho id nao thi id do moi co quyen chinh sua)
