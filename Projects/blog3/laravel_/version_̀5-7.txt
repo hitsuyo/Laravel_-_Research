@@ -1,0 +1,12 @@
+/* Created at 03/01/2019 
+* App name: blog3
+*/
+
+This is RESTful API with Laravel & Vue js
+
+This is a SIMPLE app to show data with RESTful API, Authentication
+
+Create API for other webs get data and use.
+
+Call data from API of a Wordpress page: success - 17/01/2019
+
