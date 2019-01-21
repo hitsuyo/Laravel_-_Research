@@ -9,6 +9,7 @@ class Post extends Model
 {
     use Searchable;
 
+    // Đoạn này cho phép điền thông tin vào database
     protected $fillable = [
         'id',
         'title',

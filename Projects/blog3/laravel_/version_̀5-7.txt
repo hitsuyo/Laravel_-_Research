@@ -1,12 +1,12 @@
-/* Created at 03/01/2019 
+/* Created at 03/01/2018 
 * App name: blog3
 */
 
 This is RESTful API with Laravel & Vue js
 
-This is a SIMPLE app to show data with RESTful API, Authentication
+This is a SIMPLE app to show data with RESTful API, not Authentication yet
 
-Create API for other webs get data and use.
 
-Call data from API of a Wordpress page: success - 17/01/2019
+Create API Rest with Laravel 5.6 Passport Authentication:
+https://medium.com/modulr/create-api-authentication-with-passport-of-laravel-5-6-1dc2d400a7f
 

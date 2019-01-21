@@ -51,15 +51,18 @@ Route::get('/blog', 'PostController@index');
 Route::get('/blog_crud/create', 'PostController@create');
 // ---------------------------------
 
-	Route::get('/articles', 'ArticleController@index');
-	Route::get('/articles/show', 'ArticleController@show');
-	Route::get('/articles/show/{article}', 'ArticleController@show');
+Route::group(['middleware' => 'auth:api', 
+], function () {
+	
 	Route::get('/articles/store', 'ArticleController@store'); // add
 
 	Route::get('/articles/delete/{article}', 'ArticleController@delete');
+});
 
-	Route::get('/articles/api_data', 'ArticleController@api_data');
-
+Route::get('/articles', 'ArticleController@index');
+Route::get('/articles/show', 'ArticleController@show');
+Route::get('/articles/show/{article}', 'ArticleController@show');
+Route::get('/articles/get_api_data', 'ArticleController@get_api_data'); /* use back lash - \ */
 
 
 // ---------------------------------

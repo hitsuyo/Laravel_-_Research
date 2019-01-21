@@ -53,23 +53,48 @@ Route::delete('articles/{id}', function($id) {
     return 204;
 });
 */
-// Route::group(['prefix' => 'v1'], function () {
-// 	Route::resource('articles', 'ArticleController', [
-// 		'except' => ['create','edit']
-// 	]);
-// 	Route::resource('articles/registration', 'RegisterController', [
-// 		'only' => ['store','destroy']
-// 	]);
-// 	Route::post('user/register', [
-// 		'uses' => 'AuthController@store'
-// 	]);
-// 	Route::post('/user/signin', [
-// 		'uses' => 'AuthController@signin'
-// 	]);
-// 	Route::get('/articles', 'ArticleController@index');
-// 	Route::get('/articles/show/{article}', 'ArticleController@show');
-// 	Route::post('/articles/add',			'ArticleController@store');
-// 	Route::put('/articles/{article}',	'ArticleController@update');
-// 	Route::delete('/articles/{article}','ArticleController@delete'); // test success with Postman: http://localhost/blog3/api/v1/articles/25
-// });
+
+Route::group([
+	'prefix' => 'v2/auth'
+], function(){
+	Route::post('signin', 'Auth_API\V2\V2_AuthController@signin');  /* use back lash - \ */
+	Route::post('signup', 'Auth_API\V2\V2_AuthController@signup');
+	// Route::post('signup', 'v2_AuthController@signup');
+
+	Route::group([
+		'middleware' => 'auth:api'
+	], function(){
+		Route::get('signout', array('uses'=>'Auth_API\V2\V2_AuthController@signout'));
+		Route::get('user', 'Auth_API\V2\V2_AuthController@user');
+	});
+});
+
+/*
+Ex: http://localhost/blog3/api/v2/auth/signup?name=sang&email=sang@gmail.com&password=123456&password_confirmation=123456 (test on Postman)
+
+*/
+// -------------------------------
+
+// Allow other web app to access to get data
+Route::group(['prefix' => 'v1', 
+	// 'middleware' => 'auth:api'
+], function () {
+	Route::resource('articles', 'ArticleController', [
+		'except' => ['create','edit']
+	]);
+	Route::resource('articles/registration', 'RegisterController', [
+		'only' => ['store','destroy']
+	]);
+	Route::post('user/register', [
+		'uses' => 'V1\V1_AuthController@store'
+	]);
+	Route::post('/user/signin', [
+		'uses' => 'V1\V1_AuthController@signin'
+	]);
+	Route::get('/articles', 'ArticleController@index');
+	Route::get('/articles/show/{article}', 'ArticleController@show');
+	Route::post('/articles/add',			'ArticleController@store');
+	Route::put('/articles/{article}',	'ArticleController@update');
+	Route::delete('/articles/{article}','ArticleController@delete'); // test success with Postman: http://localhost/blog3/api/v1/articles/25
+});
 

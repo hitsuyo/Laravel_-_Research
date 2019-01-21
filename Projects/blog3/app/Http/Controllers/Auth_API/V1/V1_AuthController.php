@@ -1,10 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth_API\V1;
 
+use App\Http\Controller;
 use Illuminate\Http\Request;
+use App\User;
+use Hash;
 
-class AuthController extends Controller
+class V1_AuthController extends Controller
 {
     public function store(Request $request)
     {
@@ -46,23 +49,4 @@ class AuthController extends Controller
 
     }
 
-       /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\User
-     */
-    protected function create(array $data)
-    {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
-    }
-
-    public function signin(Request $request)
-    {
-    	return 'It works';
-    }
 }

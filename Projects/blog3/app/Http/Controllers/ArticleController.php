@@ -28,8 +28,27 @@ class ArticleController extends Controller
             'title'=>'required|max:255',
             'body' => 'required'
         ]);
-        
 
+     	if(!auth()->user()){
+
+
+            return response([
+                'status' => false,
+                'message' => 'You don\'t have permission to create post!' 
+            ], 200);
+     	}
+     	else{
+	        Article::create($request->only(
+	            'title',
+	            'body'
+	        ));
+
+        	return response()->json($response, 201);
+        	// 201 : data created
+     	}
+
+        
+        //Test API
         $title = $request->input('title');
 		$body = $request->input('body');
 
@@ -53,8 +72,7 @@ class ArticleController extends Controller
         	// 'href' => 'api/v1/article/1'
         ];
 
-        return response()->json($response, 201);
-        // 201 : data created
+
     }
 
     public function update(Request $request, Article $article)
@@ -127,9 +145,9 @@ class ArticleController extends Controller
 
     // Get data from other API
 
-    public function api_data()
+    public function get_api_data()
     {
-    	return view('articles.api_data');
+    	return view('articles.get_api_data');
     }
 }
 
