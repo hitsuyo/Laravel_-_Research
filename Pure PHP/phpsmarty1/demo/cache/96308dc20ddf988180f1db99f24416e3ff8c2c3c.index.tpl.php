@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-01-23 10:34:57
+/* Smarty version 3.1.33, created on 2019-02-14 07:53:48
   from 'C:\xampp\htdocs\phpsmarty1\demo\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5c4835410aeed9_60437271',
+  'unifunc' => 'content_5c65107cd72645_07810313',
   'has_nocache_code' => true,
   'file_dependency' => 
   array (
@@ -30,7 +30,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => 120,
 ),true)) {
-function content_5c4835410aeed9_60437271 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c65107cd72645_07810313 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <HTML>
 <HEAD>
@@ -43,11 +43,11 @@ function content_5c4835410aeed9_60437271 (Smarty_Internal_Template $_smarty_tpl)
 
     <b>                Title: Welcome To Smarty!
         </b>
-    The current date and time is 2019-01-23 10:34:57
+    The current date and time is 2019-02-14 07:53:48
 
-    The value of global assigned variable $SCRIPT_NAME is /index.php
+    The value of global assigned variable $SCRIPT_NAME is /phpsmarty1/demo/index.php
 
-    Example of accessing server environment variable SERVER_NAME: tansang
+    Example of accessing server environment variable SERVER_NAME: localhost
 
     The value of {$Name} is <b><?php echo $_smarty_tpl->tpl_vars['Name']->value;?>
 </b>
@@ -86,7 +86,7 @@ An example of a section loop:
         <p>
 
         testing strip tags
-        <table border=0><tr><td><A HREF="/index.php"><font color="red">This is a test </font></A></td></tr></table>
+        <table border=0><tr><td><A HREF="/phpsmarty1/demo/index.php"><font color="red">This is a test </font></A></td></tr></table>
 
 </PRE>
 
@@ -94,8 +94,8 @@ This is an example of the html_select_date function:
 
 <form>
     <select name="Date_Month">
-<option value="01" selected="selected">January</option>
-<option value="02">February</option>
+<option value="01">January</option>
+<option value="02" selected="selected">February</option>
 <option value="03">March</option>
 <option value="04">April</option>
 <option value="05">May</option>
@@ -121,7 +121,7 @@ This is an example of the html_select_date function:
 <option value="11">11</option>
 <option value="12">12</option>
 <option value="13">13</option>
-<option value="14">14</option>
+<option value="14" selected="selected">14</option>
 <option value="15">15</option>
 <option value="16">16</option>
 <option value="17">17</option>
@@ -130,7 +130,7 @@ This is an example of the html_select_date function:
 <option value="20">20</option>
 <option value="21">21</option>
 <option value="22">22</option>
-<option value="23" selected="selected">23</option>
+<option value="23">23</option>
 <option value="24">24</option>
 <option value="25">25</option>
 <option value="26">26</option>
@@ -167,10 +167,10 @@ This is an example of the html_select_time function:
 <option value="04">04</option>
 <option value="05">05</option>
 <option value="06">06</option>
-<option value="07">07</option>
+<option value="07" selected="selected">07</option>
 <option value="08">08</option>
 <option value="09">09</option>
-<option value="10" selected="selected">10</option>
+<option value="10">10</option>
 <option value="11">11</option>
 <option value="12">12</option>
 </select>
@@ -209,7 +209,7 @@ This is an example of the html_select_time function:
 <option value="31">31</option>
 <option value="32">32</option>
 <option value="33">33</option>
-<option value="34" selected="selected">34</option>
+<option value="34">34</option>
 <option value="35">35</option>
 <option value="36">36</option>
 <option value="37">37</option>
@@ -228,7 +228,7 @@ This is an example of the html_select_time function:
 <option value="50">50</option>
 <option value="51">51</option>
 <option value="52">52</option>
-<option value="53">53</option>
+<option value="53" selected="selected">53</option>
 <option value="54">54</option>
 <option value="55">55</option>
 <option value="56">56</option>
@@ -285,7 +285,7 @@ This is an example of the html_select_time function:
 <option value="45">45</option>
 <option value="46">46</option>
 <option value="47">47</option>
-<option value="48">48</option>
+<option value="48" selected="selected">48</option>
 <option value="49">49</option>
 <option value="50">50</option>
 <option value="51">51</option>
@@ -294,7 +294,7 @@ This is an example of the html_select_time function:
 <option value="54">54</option>
 <option value="55">55</option>
 <option value="56">56</option>
-<option value="57" selected="selected">57</option>
+<option value="57">57</option>
 <option value="58">58</option>
 <option value="59">59</option>
 </select>
