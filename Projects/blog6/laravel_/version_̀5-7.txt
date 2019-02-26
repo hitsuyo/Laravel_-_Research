@@ -1,0 +1,14 @@
+/* Created at 21/02/2019 
+* App name: blog6
+*/
+
+User Authentication compleated. Tutorials : https://www.youtube.com/watch?v=quiUytHXutM
+
+Working with Eloquent which is an ORM (Object Relational Mapper)
+
+Login/ Logout/ Register
+
+Chuc nang phan quyen (post duoc chi dinh danh cho id nao thi id do moi co quyen chinh sua)
+
+-----------------------
+Mo rong nhieu tinh nang phuc tap hon. Tutorials: https://laracasts.com/series/laravel-from-scratch-2017/episodes/20
